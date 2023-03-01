@@ -5,61 +5,75 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          backgroundColor: Colors.teal,
-          appBar: AppBar(
-            backgroundColor: Colors.blueGrey[900],
-            centerTitle: true,
-            title: Text('Mi-Card'),
-          ),
-          body: SafeArea(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+        backgroundColor: Colors.teal,
+        body: SafeArea(
+          child: Container(
+            padding: const EdgeInsets.only(top: 30),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  color: Colors.blueGrey[300],
-                  width: 100,
-                  padding: EdgeInsets.all(20),
-                  child: Text('DEBUG'),
+                const CircleAvatar(
+                  backgroundImage: AssetImage('images/dp.jpg'),
+                  radius: 50,
                 ),
-                SizedBox(
-                  width: 10,
-                ),
-                Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        color: Colors.purple,
-                        width: 100,
-                        height: 100,
-                        child: Center(child: Text('A')),
-                      ),
-                      Container(
-                        color: Colors.blue,
-                        width: 100,
-                        height: 100,
-                        child: Center(child: Text('B')),
-                      ),
-                    ],
+                const Text(
+                  'Himanshu Jangra',
+                  style: TextStyle(
+                    fontSize: 30.0,
+                    color: Colors.white,
+                    fontFamily: 'Pacifico',
                   ),
                 ),
-                SizedBox(width: 10),
-                Container(
-                  color: Colors.red[400],
-                  width: 100,
-                  padding: EdgeInsets.all(20),
-                  child: Text('STOP'),
+                const SizedBox(
+                  height: 5,
+                ),
+                const Text(
+                  'FLUTTER DEVELOPER',
+                  style: TextStyle(
+                      fontSize: 15.0,
+                      color: Colors.black54,
+                      letterSpacing: 2.5,
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 20,
+                  width: 150,
+                  child: Divider(
+                    color: Colors.teal.shade100,
+                  ),
+                ),
+                const Card(
+                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                  child: ListTile(
+                    leading: Icon(Icons.phone, color: Colors.teal),
+                    title: Text(
+                      '+91 8700201973',
+                      style: TextStyle(fontSize: 15),
+                    ),
+                  ),
+                ),
+                const Card(
+                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                  child: ListTile(
+                    leading: Icon(Icons.email, color: Colors.teal),
+                    title: Text(
+                      'himjan0@gmail.com',
+                      style: TextStyle(fontSize: 15),
+                    ),
+                  ),
                 ),
               ],
             ),
-          )),
+          ),
+        ),
+      ),
     );
   }
 }

@@ -1,0 +1,10 @@
+^D:\VS CODE\FLUTTER\MI_CARD\BUILD\WINDOWS\CMAKEFILES\820D47494C5625656C57A92F6A7BF364\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SD:/VS Code/flutter/mi_card/windows" "-BD:/VS Code/flutter/mi_card/build/windows" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "D:/VS Code/flutter/mi_card/build/windows/mi_card.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
